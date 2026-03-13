@@ -5,7 +5,7 @@
 **Project:** Kubernetes DevSecOps Platform on GCP\
 **Prepared By:** Sumit_Gautam
 
-**Platform Stack:** Kubernetes (K3s), ArgoCD, Argo Rollouts, Prometheus,
+**Platform Stack:** Kubernetes (K8s), ArgoCD, Argo Rollouts, Prometheus,
 Grafana, Fluent Bit, Velero, Artifact Registry
 
 ------------------------------------------------------------------------
