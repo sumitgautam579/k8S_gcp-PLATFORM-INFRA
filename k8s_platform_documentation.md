@@ -1,9 +1,10 @@
 # kubernetes Platform Implementation Documentation
 
-## Client Delivery Document
+## Infra Document
 
 **Project:** Kubernetes DevSecOps Platform on GCP\
-**Prepared By:** RAM_G
+**Prepared By:** Sumit_Gautam
+
 **Platform Stack:** Kubernetes (K3s), ArgoCD, Argo Rollouts, Prometheus,
 Grafana, Fluent Bit, Velero, Artifact Registry
 
