@@ -1,0 +1,52 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: sample-app
+  namespace: apps
+spec:
+  replicas: 2
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: sample-app
+  template:
+    metadata:
+      labels:
+        app: sample-app
+    spec:
+      containers:
+        - name: app
+          image: europe-west10-docker.pkg.dev/loyal-glass-488517-b4/apps/sample-app:latest
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 300m
+              memory: 256Mi
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            runAsNonRoot: true
+            seccompProfile:
+              type: RuntimeDefault
+  strategy:
+    canary:
+      canaryService: sample-app-canary
+      stableService: sample-app-stable
+      trafficRouting:
+        nginx:
+          stableIngress: sample-app
+      steps:
+        - setWeight: 10
+        - pause:
+            duration: 5m
+        - setWeight: 25
+        - pause:
+            duration: 5m
+        - setWeight: 50
+        - pause:
+            duration: 10m
+        - setWeight: 100

@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ingress-platform-info
+  namespace: ingress-nginx
+data:
+  mode: small-vm
+  note: single-replica-ingress

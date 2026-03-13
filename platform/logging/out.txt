@@ -1,0 +1,54 @@
+Fluent Bit v4.2.3
+* Copyright (C) 2015-2025 The Fluent Bit Authors
+* Fluent Bit is a CNCF graduated project under the Fluent organization
+* https://fluentbit.io
+
+______ _                  _    ______ _ _             ___   _____ 
+|  ___| |                | |   | ___ (_) |           /   | / __  \
+| |_  | |_   _  ___ _ __ | |_  | |_/ /_| |_  __   __/ /| | `' / /'
+|  _| | | | | |/ _ \ '_ \| __| | ___ \ | __| \ \ / / /_| |   / /  
+| |   | | |_| |  __/ | | | |_  | |_/ / | |_   \ V /\___  |_./ /___
+\_|   |_|\__,_|\___|_| |_|\__| \____/|_|\__|   \_/     |_(_)_____/
+                                                                  
+             Fluent Bit v4.2 – Direct Routes Ahead
+         Celebrating 10 Years of Open, Fluent Innovation!
+
+[2026/03/11 18:03:26.519509396] [ info] [fluent bit] version=4.2.3, commit=40c2f27605, pid=1
+[2026/03/11 18:03:26.519591936] [ info] [storage] ver=1.5.4, type=memory, sync=normal, checksum=off, max_chunks_up=128
+[2026/03/11 18:03:26.519599636] [ info] [simd    ] SSE2
+[2026/03/11 18:03:26.519603766] [ info] [cmetrics] version=1.0.6
+[2026/03/11 18:03:26.519607746] [ info] [ctraces ] version=0.6.6
+[2026/03/11 18:03:26.519994856] [ info] [input:tail:tail.0] initializing
+[2026/03/11 18:03:26.520006536] [ info] [input:tail:tail.0] storage_strategy='memory' (memory only)
+[2026/03/11 18:03:26.520956076] [ info] [filter:kubernetes:kubernetes.0] https=1 host=kubernetes.default.svc port=443
+[2026/03/11 18:03:26.523577676] [ info] [filter:kubernetes:kubernetes.0]  token updated
+[2026/03/11 18:03:26.523594116] [ info] [filter:kubernetes:kubernetes.0] local POD info OK
+[2026/03/11 18:03:26.525817016] [ info] [filter:kubernetes:kubernetes.0] testing connectivity with API server...
+[2026/03/11 18:03:26.531668905] [ info] [filter:kubernetes:kubernetes.0] connectivity OK
+[2026/03/11 18:03:26.532120285] [ info] [output:stackdriver:stackdriver.0] metadata_server set to http://metadata.google.internal
+[2026/03/11 18:03:26.627213260] [ info] [oauth2] HTTP Status=200
+[2026/03/11 18:03:26.627244250] [ info] [oauth2] access token from 'oauth2.googleapis.com:443' retrieved
+[2026/03/11 18:03:26.630973170] [ info] [output:stackdriver:stackdriver.0] worker #0 started
+[2026/03/11 18:03:26.631892439] [ info] [http_server] listen iface=0.0.0.0 tcp_port=2020
+[2026/03/11 18:03:26.631922479] [ info] [sp] stream processor started
+[2026/03/11 18:03:26.632040989] [ info] [engine] Shutdown Grace Period=5, Shutdown Input Grace Period=2
+[2026/03/11 18:03:26.632238029] [ info] [input:tail:tail.0] inotify_fs_add(): inode=1806463 watch_fd=1 name=/var/log/containers/argocd-application-controller-0_argocd_argocd-application-controller-3aac719172a6f51debb623e2a581880f69142d4f20b484dc8d3258121662a939.log
+[2026/03/11 18:03:26.632362769] [ info] [input:tail:tail.0] inotify_fs_add(): inode=1808369 watch_fd=2 name=/var/log/containers/argocd-applicationset-controller-74bdd5645f-7csx6_argocd_argocd-applicationset-controller-732dc95f256837be37d7ac38c0915a9f098c49de47bd5a6d1fbc29ac2790fb2e.log
+[2026/03/11 18:03:26.632439009] [ info] [input:tail:tail.0] inotify_fs_add(): inode=1806401 watch_fd=3 name=/var/log/containers/argocd-dex-server-66fc67645-ckphp_argocd_copyutil-c16513bb0993a18d71cc5653b6c0b1c0f522545368a60e56a8664abcdbc99e47.log
+[2026/03/11 18:03:26.632490579] [ info] [input:tail:tail.0] inotify_fs_add(): inode=1808210 watch_fd=4 name=/var/log/containers/argocd-dex-server-66fc67645-ckphp_argocd_dex-7e5290678406a2784f9fee5ae4e5c6374de88ae9bc50ff5f2858faca3eb62fc2.log
+[2026/03/11 18:03:26.632672539] [ info] [input:tail:tail.0] inotify_fs_add(): inode=1806399 watch_fd=5 name=/var/log/containers/argocd-notifications-controller-5474d4cbb6-xq56p_argocd_argocd-notifications-controller-59bb3cb014dc8d42b761cb3138045175db4ae4097548ffee083c7eff6c3053eb.log
+[2026/03/11 18:03:26.632723699] [ info] [input:tail:tail.0] inotify_fs_add(): inode=1808262 watch_fd=6 name=/var/log/containers/argocd-redis-6888c8c66f-gzktj_argocd_redis-1af322761d3ebc3ce03e3de9a175cde2ae41179f78e698cc132f8bc1301e6059.log
+[2026/03/11 18:03:26.632767649] [ info] [input:tail:tail.0] inotify_fs_add(): inode=1806387 watch_fd=7 name=/var/log/containers/argocd-redis-6888c8c66f-gzktj_argocd_secret-init-2d0205d4b16fc64a26cac95dd4eca5698e9a68f42f4b278f99a386fbb15ac9ac.log
+[2026/03/11 18:03:26.632981349] [ info] [input:tail:tail.0] inotify_fs_add(): inode=1806491 watch_fd=8 name=/var/log/containers/argocd-repo-server-6c4975f4ff-dc7z4_argocd_argocd-repo-server-9c08cd34f8825e1f3b719c9f62fe304eb9e7224177f631893349aaf1541b8fe3.log
+[2026/03/11 18:03:26.633096269] [ info] [input:tail:tail.0] inotify_fs_add(): inode=1806406 watch_fd=9 name=/var/log/containers/argocd-repo-server-6c4975f4ff-dc7z4_argocd_copyutil-1504d3a3432a9b49e76128e276fd51d2769db015028fa459166ef9ad2b3c5285.log
+[2026/03/11 18:03:26.633153159] [ info] [input:tail:tail.0] inotify_fs_add(): inode=1806459 watch_fd=10 name=/var/log/containers/argocd-server-5f7ff864d5-n8x8t_argocd_argocd-server-c49bb5c2c4e96c90dc4e37d1e4e948bf7367fa20741304ce804fbfe725e88f40.log
+[2026/03/11 18:03:26.633215129] [ info] [input:tail:tail.0] inotify_fs_add(): inode=1080139 watch_fd=11 name=/var/log/containers/coredns-695cbbfcb9-w68pk_kube-system_coredns-6e2eb47c6f88b42d718fc3529b3d386defab40ace67a5d12b88420dac1a5e9c8.log
+[2026/03/11 18:03:26.639711399] [ info] [input:tail:tail.0] inotify_fs_add(): inode=1812686 watch_fd=12 name=/var/log/containers/ingress-nginx-controller-7876c5d5f5-lxvdk_ingress-nginx_controller-eab3263ec04dee22b7f9a8cbc19728a1ec4d9079ffc48f2cfc15c6b23588f481.log
+[2026/03/11 18:03:26.639769119] [ info] [input:tail:tail.0] inotify_fs_add(): inode=1080119 watch_fd=13 name=/var/log/containers/local-path-provisioner-546dfc6456-hl78b_kube-system_local-path-provisioner-c0203ebedc5e0205373d99ee24fcde9b59295a405893bd8c77fcc6265d570734.log
+[2026/03/11 18:03:26.639941259] [ info] [input:tail:tail.0] inotify_fs_add(): inode=1820855 watch_fd=14 name=/var/log/containers/log-test_default_log-test-54870db181d1ac77892bdd932ea749098541a0bb329f9262be0054b23d63d2f3.log
+[2026/03/11 18:03:26.640029839] [ info] [input:tail:tail.0] inotify_fs_add(): inode=1080162 watch_fd=15 name=/var/log/containers/metrics-server-c8774f4f4-bwgb8_kube-system_metrics-server-5614ef51a38c03e1c67e9199e8e1623cca92ee203d93f410c7b05ebfc8fb6597.log
+[2026/03/11 18:03:26.640151339] [ info] [input:tail:tail.0] inotify_fs_add(): inode=1811761 watch_fd=16 name=/var/log/containers/svclb-ingress-nginx-controller-df3c7297-n4627_kube-system_lb-tcp-443-3e75e0dbacd78ec7b152e841407c17d07fcd5c81d3c9c7184836c9ab8eca8aab.log
+[2026/03/11 18:03:26.640195409] [ info] [input:tail:tail.0] inotify_fs_add(): inode=1811279 watch_fd=17 name=/var/log/containers/svclb-ingress-nginx-controller-df3c7297-n4627_kube-system_lb-tcp-80-4fb426b71ac05a5b3cd6fc6d680e976a621a4fb0745b0acb5112091e7a7482d4.log
+[2026/03/11 18:03:26.640243729] [ info] [input:tail:tail.0] inotify_fs_add(): inode=1815932 watch_fd=18 name=/var/log/containers/velero-75dd87c896-lpcgk_velero_velero-929d3621402b49ea54165017430aefb6b25716e15298e8254baf81f008f6f0e6.log
+[2026/03/11 18:03:26.640286019] [ info] [input:tail:tail.0] inotify_fs_add(): inode=1813271 watch_fd=19 name=/var/log/containers/velero-75dd87c896-lpcgk_velero_velero-velero-plugin-for-gcp-045ae0112ebb281c096f59548d97758a4edcdcb722aee287e25f65ba85694d8b.log
+[2026/03/11 18:03:26.640454289] [ info] [input:tail:tail.0] inotify_fs_add(): inode=1820901 watch_fd=20 name=/var/log/containers/fluent-bit-vm52p_logging_fluent-bit-99a4984c64933aaa438ec1b77b150c578d44c81b2da14c4b97416d0c4c5879a6.log

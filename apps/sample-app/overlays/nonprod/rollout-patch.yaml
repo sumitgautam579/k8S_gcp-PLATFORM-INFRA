@@ -1,0 +1,7 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: sample-app
+  namespace: nonprod
+spec:
+  replicas: 1

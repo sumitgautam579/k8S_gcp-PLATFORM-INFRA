@@ -1,0 +1,14 @@
+resources:
+  - ../../base
+  - namespace.yaml
+
+namespace: prod
+
+patches:
+  - target:
+      group: argoproj.io
+      version: v1alpha1
+      kind: Rollout
+      name: sample-app
+    path: rollout-patch.yaml
+    

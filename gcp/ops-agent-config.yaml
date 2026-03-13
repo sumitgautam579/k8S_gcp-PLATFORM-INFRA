@@ -1,0 +1,20 @@
+logging:
+  receivers:
+    syslog:
+      type: files
+      include_paths:
+        - /var/log/syslog
+        - /var/log/kern.log
+        - /var/log/auth.log
+    k3s:
+      type: files
+      include_paths:
+        - /var/log/k3s.log
+    containers:
+      type: files
+      include_paths:
+        - /var/log/pods/*/*/*.log
+  service:
+    pipelines:
+      default_pipeline:
+        receivers: [syslog, k3s, containers]

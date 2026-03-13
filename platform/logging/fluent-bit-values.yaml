@@ -1,0 +1,52 @@
+kind: DaemonSet
+
+serviceAccount:
+  create: true
+
+config:
+  service: |
+    [SERVICE]
+        Flush        1
+        Log_Level    info
+        Daemon       Off
+        Parsers_File parsers.conf
+        HTTP_Server  On
+        HTTP_Listen  0.0.0.0
+        HTTP_Port    2020
+
+  inputs: |
+    [INPUT]
+        Name tail
+        Path /var/log/containers/*.log
+        Parser docker
+        Tag kube.*
+        Mem_Buf_Limit 10MB
+        Skip_Long_Lines On
+
+  filters: |
+    [FILTER]
+        Name kubernetes
+        Match kube.*
+        Merge_Log On
+        Keep_Log Off
+        K8S-Logging.Parser On
+        K8S-Logging.Exclude Off
+
+  outputs: |
+    [OUTPUT]
+        Name stackdriver
+        Match kube.*
+        resource k8s_container
+        k8s_cluster_name server
+        k8s_cluster_location europe-west10-b
+        google_service_credentials /fluent-bit/secrets/loyal-glass-488517-b4-99fa95583889.json
+
+extraVolumes:
+  - name: gcp-logging-key
+    secret:
+      secretName: gcp-logging-key
+
+extraVolumeMounts:
+  - name: gcp-logging-key
+    mountPath: /fluent-bit/secrets
+    readOnly: true
