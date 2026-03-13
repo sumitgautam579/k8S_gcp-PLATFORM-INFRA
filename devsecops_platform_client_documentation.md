@@ -423,7 +423,7 @@ This DevSecOps platform provides:
 
 # 18. Conclusion
 
-The implemented platform provides a production-ready DevSecOps
+The implemented platform provides a production-ready Kubernetes
 foundation on Google Cloud.\
 It supports automated deployments, monitoring, logging, security
 controls, and backup mechanisms.
